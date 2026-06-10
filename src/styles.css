@@ -461,21 +461,23 @@ a {
   margin-bottom: 10px;
 }
 
-.lumina-glyph {
+.lumina-glyph-icon {
   width: 62px;
   height: 62px;
   border-radius: 18px;
   flex-shrink: 0;
+  overflow: hidden;
+  background: #1a0b2e;
+  box-shadow: 0 10px 28px -8px rgba(201, 56, 138, .55), 0 0 0 1px rgba(168,216,240,.15), inset 0 1px 0 rgba(255,255,255,.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, #a8d8f0, #7890c0);
-  box-shadow: 0 10px 28px -8px rgba(120, 144, 192, .6), inset 0 1px 0 rgba(255, 255, 255, .4);
 }
 
-.lumina-glyph svg {
-  width: 36px;
-  height: 36px;
+.lumina-glyph-icon img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
 }
 
 .lumina-name {
@@ -850,6 +852,166 @@ a {
   box-shadow: 0 0 20px rgba(244, 180, 80, .2);
 }
 
+/* ── Fable showcase ── */
+.fable-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 80px 28px 120px;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+.fable-text .eyebrow {
+  margin-bottom: 28px;
+}
+
+.fable-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.fable-glyph-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 28px -8px rgba(200, 140, 40, .55), inset 0 1px 0 rgba(255,255,255,.2);
+}
+
+.fable-glyph-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fable-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(48px, 7vw, 80px);
+  letter-spacing: .02em;
+  line-height: 1;
+  background: linear-gradient(105deg, #fff 0%, #fde8b0 20%, #fce8a0 40%, #e8a060 60%, #c8b060 80%, #7aaa72 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.fable-role {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #fce8a0;
+  opacity: .7;
+  margin-bottom: 24px;
+}
+
+.fable-desc {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, .72);
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.fable-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.fable-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, .82);
+  font-weight: 500;
+}
+
+.fable-features li svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #7aaa72;
+  stroke: currentColor;
+}
+
+.fable-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.fable-screen {
+  position: relative;
+}
+
+.fable-frame {
+  border-radius: 20px !important;
+  border-color: rgba(252, 220, 100, .16) !important;
+  box-shadow:
+    0 40px 80px -20px rgba(10, 5, 30, .65),
+    0 0 70px -10px rgba(200, 160, 40, .2),
+    inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+}
+
+.fable-glow {
+  background:
+    radial-gradient(ellipse 70% 55% at 55% 35%, rgba(252, 220, 100, .22), transparent 65%),
+    radial-gradient(ellipse 55% 45% at 25% 70%, rgba(122, 170, 114, .18), transparent 65%) !important;
+}
+
+.fable-pill {
+  background: rgba(252, 220, 100, .1);
+  color: rgba(252, 232, 160, .9);
+  border: 1px solid rgba(252, 220, 100, .25);
+}
+
+.fable-pill .dot {
+  background: #fce8a0;
+  box-shadow: 0 0 0 0 rgba(252, 220, 100, .6);
+  animation: fablepulse 3s infinite;
+}
+
+@keyframes fablepulse {
+  0%   { box-shadow: 0 0 0 0   rgba(252, 220, 100, .55) }
+  70%  { box-shadow: 0 0 0 8px rgba(252, 220, 100, 0)   }
+  100% { box-shadow: 0 0 0 0   rgba(252, 220, 100, 0)   }
+}
+
+.btn-fable-ghost {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 34px;
+  border-radius: 100px;
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(252, 232, 160, .7);
+  background: rgba(252, 220, 100, .06);
+  border: 1px solid rgba(252, 220, 100, .22);
+  backdrop-filter: blur(6px);
+  transition: .4s cubic-bezier(.2, .8, .3, 1);
+}
+
+.btn-fable-ghost:hover {
+  border-color: rgba(252, 232, 160, .55);
+  background: rgba(252, 220, 100, .12);
+  color: rgba(252, 232, 160, .95);
+}
+
 /* footer dual CTA */
 .footer-cta-btns {
   display: flex;
@@ -1076,6 +1238,15 @@ a {
     order: -1;
   }
 
+  .fable-showcase {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .fable-screen {
+    order: -1;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 36px 24px;
@@ -1189,17 +1360,20 @@ a {
     justify-content: center;
   }
 
-  /* Coming soon */
-  .coming-soon-strip {
-    padding: 48px 16px 80px;
+  /* Fable showcase */
+  .fable-showcase {
+    gap: 28px;
+    padding: 60px 16px 80px;
   }
 
-  .soon-cards {
+  .fable-desc {
+    font-size: 15.5px;
+  }
+
+  .fable-actions {
     flex-direction: column;
-  }
-
-  .soon-card {
-    max-width: 100%;
+    align-items: flex-start;
+    gap: 14px;
   }
 
   /* Apps section */
