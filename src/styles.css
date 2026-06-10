@@ -657,7 +657,209 @@ a {
   color: rgba(255, 255, 255, .45);
 }
 
+/* ── Ember showcase ── */
+.ember-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 80px 28px 100px;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+.ember-screen {
+  position: relative;
+}
+
+.ember-frame {
+  border-radius: 24px !important;
+  border-color: rgba(244, 180, 80, .18) !important;
+  box-shadow:
+    0 40px 80px -20px rgba(10, 5, 30, .6),
+    0 0 70px -10px rgba(244, 140, 40, .25),
+    inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+}
+
+.ember-glow {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 40%, rgba(244, 140, 40, .28), transparent 65%),
+    radial-gradient(ellipse 55% 40% at 30% 70%, rgba(232, 99, 42, .2), transparent 65%) !important;
+}
+
+.ember-text .eyebrow {
+  margin-bottom: 28px;
+}
+
+.ember-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.ember-glyph-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 28px -8px rgba(232, 99, 42, .6), inset 0 1px 0 rgba(255, 255, 255, .2);
+}
+
+.ember-glyph-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ember-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(48px, 7vw, 80px);
+  letter-spacing: .02em;
+  line-height: 1;
+  background: linear-gradient(105deg, #fff 0%, #fde8b0 25%, #f4c97a 50%, #e8632a 80%, #c04018 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ember-role {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #f4c97a;
+  opacity: .7;
+  margin-bottom: 24px;
+}
+
+.ember-desc {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, .72);
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.ember-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.ember-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, .82);
+  font-weight: 500;
+}
+
+.ember-features li svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #f4c97a;
+  stroke: currentColor;
+}
+
+.ember-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ember-pill.live {
+  background: rgba(244, 180, 80, .13);
+  color: rgba(244, 201, 122, .95);
+  border: 1px solid rgba(244, 180, 80, .28);
+}
+
+.ember-pill.live .dot {
+  background: #f4c97a;
+  box-shadow: 0 0 0 0 rgba(244, 180, 80, .6);
+  animation: emberpulse 2.2s infinite;
+}
+
+@keyframes emberpulse {
+  0%   { box-shadow: 0 0 0 0 rgba(244, 180, 80, .55) }
+  70%  { box-shadow: 0 0 0 8px rgba(244, 180, 80, 0) }
+  100% { box-shadow: 0 0 0 0 rgba(244, 180, 80, 0) }
+}
+
+.btn-ember {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 34px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: .4s cubic-bezier(.2, .8, .3, 1);
+  color: #fff;
+  background: linear-gradient(120deg, #e8632a, #c97820 55%, #f4c97a);
+  box-shadow: 0 8px 30px rgba(232, 99, 42, .45), inset 0 1px 0 rgba(255, 255, 255, .3);
+}
+
+.btn-ember:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 44px rgba(232, 99, 42, .6), 0 0 40px rgba(244, 201, 122, .35), inset 0 1px 0 rgba(255, 255, 255, .45);
+}
+
+.btn-ember .arrow,
+.btn-ember-ghost .arrow {
+  transition: transform .4s;
+}
+
+.btn-ember:hover .arrow,
+.btn-ember-ghost:hover .arrow {
+  transform: translate(4px, 0);
+}
+
+.btn-ember-ghost {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px 34px;
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: .4s cubic-bezier(.2, .8, .3, 1);
+  color: #f4c97a;
+  background: rgba(244, 180, 80, .07);
+  border: 1px solid rgba(244, 180, 80, .35);
+  backdrop-filter: blur(6px);
+}
+
+.btn-ember-ghost:hover {
+  border-color: rgba(244, 201, 122, .8);
+  background: rgba(244, 180, 80, .14);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(244, 180, 80, .2);
+}
+
+/* footer dual CTA */
+.footer-cta-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* ── pills ── */
+
 .pill {
   font-size: 12.5px;
   font-weight: 700;
@@ -865,6 +1067,15 @@ a {
     order: -1;
   }
 
+  .ember-showcase {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .ember-screen {
+    order: -1;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 36px 24px;
@@ -915,6 +1126,37 @@ a {
   .lumina-showcase {
     gap: 28px;
     padding: 0 16px 72px;
+  }
+
+  /* Ember showcase */
+  .ember-showcase {
+    gap: 28px;
+    padding: 60px 16px 72px;
+  }
+
+  .ember-desc {
+    font-size: 15.5px;
+  }
+
+  .ember-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .ember-actions .btn-ember {
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .footer-cta-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-cta-btns .btn,
+  .footer-cta-btns .btn-ember-ghost {
+    justify-content: center;
   }
 
   .lumina-glyph {
